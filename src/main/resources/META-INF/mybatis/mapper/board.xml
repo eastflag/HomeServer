@@ -2,5 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.eastflag.persistence.BoardMapper">
-
+    <insert id="insertAttach" parameterType="AttachVO" useGeneratedKeys="true" keyProperty="attach_id">
+      INSERT INTO attach(board_id, path, org_name, upd_name) VALUES(#{board_id}, #{path}, #{org_name}, #{upd_name});
+    </insert>
 </mapper>

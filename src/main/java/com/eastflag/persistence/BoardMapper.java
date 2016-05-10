@@ -1,5 +1,6 @@
 package com.eastflag.persistence;
 
+import com.eastflag.domain.AttachVO;
 import com.eastflag.domain.BoardVO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -21,4 +22,6 @@ public interface BoardMapper {
 
     @Select("select * from board")
     List<BoardVO> findAll();
+
+    void insertAttach(AttachVO attach);
 }

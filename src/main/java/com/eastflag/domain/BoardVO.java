@@ -1,6 +1,9 @@
 package com.eastflag.domain;
 
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * Created by eastflag on 2016-04-25.
@@ -13,4 +16,6 @@ public class BoardVO {
     private String content;
     private String created;
     private String updated;
+
+    private List<MultipartFile> files;
 }
