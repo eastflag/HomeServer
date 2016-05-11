@@ -91,7 +91,12 @@ public class ApiController {
     @RequestMapping(method = RequestMethod.POST, value = "/api/upload/test")
     public Result upload(@RequestParam("name") String name,
                          @RequestParam(value = "file", required = false) MultipartFile file) {
-        File rootFolder = new File(Constant.UPLOAD_FOLDER);
+        File rootFolder = new File(Constant.ROOT_FOLDER + Constant.UPLOAD_FOLDER);
+
+        //폴더가 존재하지 않는다면 생성
+        if(!rootFolder.exists()){
+            rootFolder.mkdirs();
+        }
 
         if (!file.isEmpty()) {
             try {
@@ -115,10 +120,12 @@ public class ApiController {
 
         //게시판 저장
         boardMapper.insertBoard(board); //insert 하고 나면 board 객체에 자동생성된 board_id가 리턴된다.
+        System.out.println("board_id:" + board.getBoard_id());
 
-        File rootFolder = new File(Constant.UPLOAD_FOLDER);
+        File rootFolder = new File(Constant.ROOT_FOLDER + Constant.UPLOAD_FOLDER);
 
         if(board.getFiles() != null && board.getFiles().size() > 0) {
+            System.out.println("files size:" + board.getFiles().size());
             try {
                 //파일을 지정된 경로에 저장후 저장된 정보를 돌려받는다.
                 List<AttachVO> list = FileUtil.fileUpload(board.getFiles(), rootFolder.getAbsolutePath());

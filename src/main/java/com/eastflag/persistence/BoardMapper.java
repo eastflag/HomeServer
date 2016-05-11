@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Mapper
 public interface BoardMapper {
-    @Insert("INSERT INTO board(user_id, title, content) VALUES(#{user_id}, #{title}, #{content})")
+
     void insertBoard(BoardVO board);
 
     @Select("select * from board where board_id = #{board_id}")
@@ -23,5 +23,6 @@ public interface BoardMapper {
     @Select("select * from board")
     List<BoardVO> findAll();
 
+    @Insert("INSERT INTO attach(board_id, path, org_name, upd_name) VALUES(#{board_id}, #{path}, #{org_name}, #{upd_name})")
     void insertAttach(AttachVO attach);
 }

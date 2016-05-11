@@ -10,7 +10,7 @@ import java.io.File;
 public class FileTest {
     @Test
     public void FileTest() {
-        File file = new File(Constant.UPLOAD_FOLDER);
+        File file = new File(Constant.ROOT_FOLDER + Constant.UPLOAD_FOLDER);
         System.out.println(file.getAbsolutePath());
     }
 }
