@@ -1,0 +1,12 @@
+<md-content ng-controller="BoardController as board">
+  <md-list flex>
+    <md-list-item class="md-3-line" ng-repeat="board in board.boardList" ng-click="null">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{board.title}}</h3>
+        <h4>{{board.name}}</h4>
+        <p>{{board.updated}}</p>
+      </div>
+      <md-divider ></md-divider>
+    </md-list-item>
+  </md-list>
+</md-content>
