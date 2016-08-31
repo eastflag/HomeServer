@@ -40,7 +40,7 @@ public final class WebSocketServer {
 
     public static ArrayList<ChannelHandlerContext> sContextList = new ArrayList<>();
 
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         // Configure SSL.
         final SslContext sslCtx;
         if (SSL) {
@@ -69,5 +69,5 @@ public final class WebSocketServer {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }
-    }
+    }*/
 }

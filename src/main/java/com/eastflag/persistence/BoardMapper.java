@@ -17,10 +17,10 @@ public interface BoardMapper {
 
     void insertBoard(BoardVO board);
 
-    @Select("select * from board where board_id = #{board_id}")
+    @Select("select board.*, user.name from board inner join user on board.user_id=user.user_id where board_id = #{board_id}")
     BoardVO findById(@Param("board_id") int board_id);
 
-    @Select("select * from board")
+    @Select("select board.*, user.name from board inner join user on board.user_id=user.user_id")
     List<BoardVO> findAll();
 
     @Insert("INSERT INTO attach(board_id, path, org_name, upd_name) VALUES(#{board_id}, #{path}, #{org_name}, #{upd_name})")
