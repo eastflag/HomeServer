@@ -28,7 +28,19 @@
       <acme-navbar creation-date="main.creationDate"></acme-navbar>
     </header>
 
-    <div ui-view></div>
+    <div flex ui-view></div>
+
+    <md-toolbar id="top_menu" layout="row" align-item="center center">
+      <md-button ui-sref="home" ui-sref-active="active" class="menu" flex="33" layout="column" layout-align="center center">
+        <md-icon>home</md-icon>Home
+      </md-button>
+      <md-button ui-sref="board" ui-sref-active="active" class="menu" flex="33" layout="column" layout-align="center center">
+        <md-icon>description</md-icon>Board
+      </md-button>
+      <md-button ui-sref="contact" ui-sref-active="active" class="menu" flex="33" layout="column" layout-align="center center">
+        <md-icon>contact_phone</md-icon>Contact
+      </md-button>
+    </md-toolbar>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

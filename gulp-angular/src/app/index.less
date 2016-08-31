@@ -60,22 +60,33 @@ html {
 }
 
 /* 메뉴 선택시 효과*/
-section#top_menu a.active {
+#top_menu a.active {
   background: orange;
 }
 /* 마우스 오버시 효과*/
-section#top_menu a:hover {
+#top_menu a:hover {
   background: orange;
 }
 /* 마우스 오버시 아이콘을 360회전하기 위한 transition 정의*/
-section#top_menu md-icon {
+#top_menu md-icon {
   transition: transform 0.5s;
 }
 /* 마우스 오버시 아이콘 360도 회전 */
-section#top_menu a:hover md-icon {
+#top_menu a:hover md-icon {
   transform: rotate(360deg);
 }
 
+#top_menu md-icon {
+  margin: 0;
+}
+#top_menu span {
+  line-height: 1.2em;
+}
+.menu {
+  padding: 0;
+  margin: 0;
+  border-right: solid 1px white;
+}
 
 md-toolbar.md-default-theme {
   background-color: black;
@@ -105,6 +116,12 @@ section.jumbotron {
       float: right;
       width: 100px;
     }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  html, body {
+    font-size: 12px;
   }
 }
 
