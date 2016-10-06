@@ -46,6 +46,7 @@
 
 html {
   font-family: 'Roboto Slab', serif;
+  font-size: 14px;
 }
 
 [layout=row] {
@@ -59,29 +60,49 @@ html {
   padding: 0.2em 0;
 }
 
-/* 메뉴 선택시 효과*/
+/*// 메뉴 선택시 효과
 #top_menu a.active {
   background: orange;
 }
-/* 마우스 오버시 효과*/
+// 마우스 오버시 효과
 #top_menu a:hover {
   background: orange;
 }
-/* 마우스 오버시 아이콘을 360회전하기 위한 transition 정의*/
+// 마우스 오버시 아이콘을 360회전하기 위한 transition 정의
 #top_menu md-icon {
   transition: transform 0.5s;
 }
-/* 마우스 오버시 아이콘 360도 회전 */
+// 마우스 오버시 아이콘 360도 회전
 #top_menu a:hover md-icon {
   transform: rotate(360deg);
+}*/
+
+#top_menu {
+  span {
+    line-height: 1.2em;
+  }
+  a.active {
+    background: orange;
+  }
+  a:hover {
+    background: orange;
+    md-icon {
+      transform: rotate(360deg);
+    }
+  }
+  md-icon {
+    margin: 0;
+    transition: transform 0.5s;
+  }
 }
 
-#top_menu md-icon {
+/*#top_menu md-icon {
   margin: 0;
 }
 #top_menu span {
   line-height: 1.2em;
-}
+}*/
+
 .menu {
   padding: 0;
   margin: 0;
@@ -122,6 +143,13 @@ section.jumbotron {
 @media screen and (max-width: 599px) {
   html, body {
     font-size: 12px;
+    line-height: 1;
+  }
+  .menu {
+    font-size: 10px;
+  }
+  #top_menu {
+    min-height: 40px;
   }
 }
 

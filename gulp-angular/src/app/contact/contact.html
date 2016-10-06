@@ -1,3 +1,6 @@
-<div layout="column">
-  연락처
-</div>
+<md-content ng-controller="ContactController as contact" layout="column">
+    <md-button class="md-raised md-warn" ng-click="contact.getImageSaveContact()">
+      Get Image and Save a Contact with It
+    </md-button>
+    <img ng-src="{{contact.collection.selectedImage}}" style="width:100%; height: auto;"/>
+</md-content>

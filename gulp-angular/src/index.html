@@ -5,6 +5,7 @@
     <title>gulpAngular</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -28,7 +29,7 @@
       <acme-navbar creation-date="main.creationDate"></acme-navbar>
     </header>
 
-    <div flex ui-view></div>
+    <md-content flex ui-view></md-content>
 
     <md-toolbar id="top_menu" layout="row" align-item="center center">
       <md-button ui-sref="home" ui-sref-active="active" class="menu" flex="33" layout="column" layout-align="center center">
@@ -47,6 +48,8 @@
     <!-- run `gulp inject` to automatically populate bower script dependencies -->
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script src="cordova.js"></script>
 
     <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
     <!-- inject:js -->

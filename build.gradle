@@ -34,6 +34,10 @@ dependencies {
 	compile group: 'io.netty', name: 'netty-all', version: '4.0.34.Final'
 	compile("com.google.code.gson:gson:2.4")
 
+	// https://mvnrepository.com/artifact/axis/axis
+	compile group: 'axis', name: 'axis', version: '1.4'
+
+
 	runtime("mysql:mysql-connector-java")
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')

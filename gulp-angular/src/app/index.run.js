@@ -9,6 +9,10 @@
   function runBlock($log) {
 
     $log.debug('runBlock end');
+
+/*    document.addEventListener("deviceready", function () {
+      $cordovaPlugin.someFunction().then(success, error);
+    }, false);*/
   }
 
 })();

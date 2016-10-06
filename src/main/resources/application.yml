@@ -1,8 +1,8 @@
 datasource:
   driver-class-name: "com.mysql.jdbc.Driver"
-  url: "jdbc:mysql://115.68.184.127:3306/test?useUnicode=true&charaterEncoding=utf-8"
+  url: "jdbc:mysql://52.78.44.33:3306/testdb?useUnicode=true&charaterEncoding=utf-8"
   user-name: "eastflag"
-  password: "dklee123"
+  password: "dklee98"
   initial-size: 10
   max-active: 10
   max-idle: 10
