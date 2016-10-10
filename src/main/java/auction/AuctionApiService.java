@@ -75,7 +75,7 @@ public class AuctionApiService {
         return res;
     }
 
-    public ReviseItemResponseT ReviseItem(String userTicket, String itemID, String itemHtml) throws Exception {
+    public ReviseItemResponseT ReviseItem(String userTicket, String itemID, String itemHtml, String name) throws Exception {
         ReviseItemResponseT res = new ReviseItemResponseT();
 
         // SOAP Header 저장
@@ -95,6 +95,9 @@ public class AuctionApiService {
         ItemT item = new ItemT();
 
         item.setItemID(itemID);
+        if(name != null) {
+            item.setName(name);
+        }
         item.setDescriptionVerType(VerTypeCode.New);
         ItemContentsHtmlT contentHtml = new ItemContentsHtmlT();
         contentHtml.setItemHtml(itemHtml);

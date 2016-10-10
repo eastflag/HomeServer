@@ -80,7 +80,7 @@ public class AuctionTest {
                     "<img src=\"http://link.webhard.co.kr/img/HDC_IDDNS79COKR_FD2016080210164324627EFC2\" />\n" +
                     "<img src=\"http://link.webhard.co.kr/img/HDC_IDDNS79COKR_FD20160802101643246990410\" /><img src=\"http://link.webhard.co.kr/img/HDC_IDDNS79COKR_FD201608021016429657F9EF0\" />";
 
-            ReviseItemResponseT res = svc.ReviseItem(userTicket, itemID, itemHtml);
+            ReviseItemResponseT res = svc.ReviseItem(userTicket, itemID, itemHtml, null);
             System.out.println(res.toString());
             System.out.println(res.getItemID()); //실패시 null
         } catch (Exception e) {
@@ -89,6 +89,7 @@ public class AuctionTest {
         }
     }
 
+    @Ignore
     @Test
     public void executeAuction() {
         List<AuctionVO> itemList = auctionMapper.getAuctionItemList();
@@ -103,7 +104,14 @@ public class AuctionTest {
             try {
                 itemID = item.getItem_id();
                 itemHtml = item.getUrl();
-                res = svc.ReviseItem(userTicket, itemID, itemHtml);
+                String name = item.getName();
+                String crop_name = cropString(name, 50);
+
+                if(name.equals(crop_name)) {
+                    res = svc.ReviseItem(userTicket, itemID, itemHtml, null);
+                } else {
+                    res = svc.ReviseItem(userTicket, itemID, itemHtml, crop_name);
+                }
 
                 if (res.getItemID() != null) {
                     System.out.println("success: " + res.getItemID());
@@ -123,5 +131,39 @@ public class AuctionTest {
 
         }
 
+    }
+
+    @Test
+    public void crop11Street() {
+        List<AuctionVO> itemList = auctionMapper.get11StreetItemList();
+
+        for(AuctionVO item : itemList) {
+            String name = item.getName();
+            String crop_name = cropString(name, 50);
+            item.setCrop_name(crop_name);
+
+            auctionMapper.updateName(item);
+            System.out.println(crop_name);
+        }
+    }
+
+    private String cropString(String name, int crop_length) {
+        int count = 0;
+        for(int i=0; i<name.length(); ++i) {
+            int calulated_count = 0;
+            if (name.substring(i, i+1).getBytes().length > 1) {
+                calulated_count = 2;
+            } else {
+                calulated_count = 1;
+            }
+
+            count += calulated_count;
+
+            if(count>crop_length) {
+                return name.substring(0, i);
+            }
+        }
+
+        return name;
     }
 }

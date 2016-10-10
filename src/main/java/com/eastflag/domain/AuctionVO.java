@@ -13,6 +13,7 @@ public class AuctionVO {
     private String seller_code;
     private String item_id;
     private String name;
+    private String crop_name;
     private String url;
     private String is_modify;
     private int sell_price;
