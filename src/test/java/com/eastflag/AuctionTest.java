@@ -133,9 +133,24 @@ public class AuctionTest {
 
     }
 
+    @Ignore
     @Test
     public void crop11Street() {
         List<AuctionVO> itemList = auctionMapper.get11StreetItemList();
+
+        for(AuctionVO item : itemList) {
+            String name = item.getName();
+            String crop_name = cropString(name, 50);
+            item.setCrop_name(crop_name);
+
+            auctionMapper.updateName(item);
+            System.out.println(crop_name);
+        }
+    }
+
+    @Test
+    public void coprGmarketStreet() {
+        List<AuctionVO> itemList = auctionMapper.getGMarketItemList();
 
         for(AuctionVO item : itemList) {
             String name = item.getName();
