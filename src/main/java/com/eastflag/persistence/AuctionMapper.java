@@ -32,6 +32,18 @@ public interface AuctionMapper {
             "</script>"})
     List<AuctionVO> getGMarketItemList();
 
+    @Select({"<script>",
+            "SELECT * FROM auction",
+            "WHERE site='인터파크' and url is not null",
+            "</script>"})
+    List<AuctionVO> getInterparkItemList();
+
+    @Select({"<script>",
+            "SELECT * FROM auction",
+            "WHERE site='스토어팜' and url is not null",
+            "</script>"})
+    List<AuctionVO> getStorefarmItemList();
+
     @Update({"<script>",
             "UPDATE auction",
             "set result = #{result}, result_msg=#{result_msg}",
