@@ -33,16 +33,16 @@ public class Cafe24Test {
             String image2 = String.format("http://fashionkang.cafe24.com/web/product/big/%s/%s.jpg",cafe.getBox(), cafe.getImage2());
             String image1 = String.format("http://fashionkang.cafe24.com/web/product/big/%s/%s.jpg",cafe.getBox(), cafe.getImage1());
             //상품상세설명
-            String desc = String.format("<div style=\"text-align: center;\">\n" +
-                    "    <img src=\"http://fashionkang.cafe24.com/web/upload/headline/%s\"><p style=\"height:50px;\"></p>\n" +
-                    "    <img src=\"http://fashionkang.cafe24.com/web/upload/headline/%s\"><p style=\"height:50px;\"></p>\n" +
-                    "    <img src=\"http://fashionkang.cafe24.com/web/upload/desc/%s/%s.jpg\"><p style=\"height:50px;\"></p>\n" +
-                    "    <img src=\"http://fashionkang.cafe24.com/web/upload/desc/%s/%s.jpg\"><p style=\"height:84px;\"></p>\n" +
-                    "    <p style=\"font-size: 12pt;font-weight: bold;margin-bottom: 12px;\">%s</p>\n" +
-                    "    <p style=\"font-size: 12pt;font-weight: bold;margin-bottom: 12px;\">%s</p>\n" +
-                    "    <p style=\"font-size: 12pt;margin-bottom: 12px;\">%s</p>\n" +
-                    "    <p style=\"font-size: 12pt;\">%s</p>\n" +
-                    "    <img src=\"http://fashionkang.cafe24.com/web/upload/headline/원단 상세설명.png\">\n" +
+            String desc = String.format("<div style='text-align: center;'>\n" +
+                    "    <img src='http://fashionkang.cafe24.com/web/upload/headline/%s'><p style='height:50px;'></p>\n" +
+                    "    <img src='http://fashionkang.cafe24.com/web/upload/headline/%s'><p style='height:50px;'></p>\n" +
+                    "    <img src='http://fashionkang.cafe24.com/web/upload/desc/%s/%s.jpg'><p style='height:50px;'></p>\n" +
+                    "    <img src='http://fashionkang.cafe24.com/web/upload/desc/%s/%s.jpg'><p style='height:84px;'></p>\n" +
+                    "    <p style='font-size: 12pt;font-weight: bold;margin-bottom: 12px;'>%s</p>\n" +
+                    "    <p style='font-size: 12pt;font-weight: bold;margin-bottom: 12px;'>%s</p>\n" +
+                    "    <p style='font-size: 12pt;margin-bottom: 12px;'>%s</p>\n" +
+                    "    <p style='font-size: 12pt;'>%s</p>\n" +
+                    "    <img src='http://fashionkang.cafe24.com/web/upload/headline/원단 상세설명.png'>\n" +
                     "</div>", cafe.getHeadline1(), cafe.getHeadline2(), cafe.getBox(), cafe.getHeadline3(), cafe.getBox(), cafe.getHeadline4(),
                     cafe.getText1(), cafe.getText2(), cafe.getText3(), cafe.getText4());
 
