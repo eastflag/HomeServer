@@ -1,6 +1,6 @@
 package com.eastflag.controller;
 
-import com.eastflag.domain.Result;
+import com.eastflag.domain.ResultVO;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -20,15 +20,15 @@ public class HelloController {
     }
 
     @RequestMapping(method= {RequestMethod.POST}, value="/hello3")
-    public Result Hello3(@RequestParam("name") String name) {
-        Result result = new Result();
+    public ResultVO Hello3(@RequestParam("name") String name) {
+        ResultVO result = new ResultVO();
         result.setResult(0);
         result.setMsg(name);
         return result;
     }
 
     @RequestMapping(method= {RequestMethod.POST}, value="/hello4")
-    public String Hello4(@RequestBody Result result) {
+    public String Hello4(@RequestBody ResultVO result) {
         return result.getMsg();
     }
 }

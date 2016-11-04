@@ -3,25 +3,16 @@ package com.eastflag.controller;
 import com.eastflag.Constant;
 import com.eastflag.domain.AttachVO;
 import com.eastflag.domain.BoardVO;
-import com.eastflag.domain.Result;
+import com.eastflag.domain.ResultVO;
 import com.eastflag.persistence.BoardMapper;
 import com.eastflag.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by eastflag on 2016-04-25.
@@ -38,12 +29,12 @@ public class ApiController {
 
     //게시판 생성 API
     @RequestMapping(method = RequestMethod.POST, value = "/api/board")
-    public Result addBoard(@RequestBody BoardVO board) {
+    public ResultVO addBoard(@RequestBody BoardVO board) {
         System.out.println("board: " + board);
 
         boardMapper.insertBoard(board);
 
-        return new Result(0, "success");
+        return new ResultVO(0, "success");
     }
 
     //게시판 글 상세 보기
@@ -81,16 +72,16 @@ public class ApiController {
 
     //게시판 글 삭제하기
     @RequestMapping(method = RequestMethod.DELETE, value = "/api/board/{board_id}")
-    public Result removeBoard(@PathVariable String board_id) {
+    public ResultVO removeBoard(@PathVariable String board_id) {
         System.out.println("board_id: " + board_id);
 
-        return new Result(0, "success");
+        return new ResultVO(0, "success");
     }
 
     //단일 파일 업로드 테스트 : 원본 이름 그대로 저장하기
     @RequestMapping(method = RequestMethod.POST, value = "/api/upload/test")
-    public Result upload(@RequestParam("name") String name,
-                         @RequestParam(value = "file", required = false) MultipartFile file) {
+    public ResultVO upload(@RequestParam("name") String name,
+                           @RequestParam(value = "file", required = false) MultipartFile file) {
         File rootFolder = new File(Constant.ROOT_FOLDER + Constant.UPLOAD_FOLDER);
 
         //폴더가 존재하지 않는다면 생성
@@ -104,16 +95,16 @@ public class ApiController {
                 file.transferTo(saveFile);
             }
             catch (Exception e) {
-                return new Result(100, "fail");
+                return new ResultVO(100, "fail");
             }
         }
 
-        return new Result(0, "success");
+        return new ResultVO(0, "success");
     }
 
     //다중 파일 업로드 : 이름 변경하여 저장
     @RequestMapping(method = RequestMethod.POST, value = "/api/upload")
-    public Result multiUpload(@ModelAttribute BoardVO board) {
+    public ResultVO multiUpload(@ModelAttribute BoardVO board) {
         System.out.println("user_id:" + board.getUser_id());
         System.out.println("content:" + board.getContent());
         System.out.println("title:" + board.getTitle());
@@ -135,10 +126,10 @@ public class ApiController {
                     boardMapper.insertAttach(attach);
                 }
             } catch (IOException e) {
-                return new Result(100, "fail");
+                return new ResultVO(100, "fail");
             }
         }
 
-        return new Result(0, "success");
+        return new ResultVO(0, "success");
     }
 }

@@ -140,7 +140,7 @@ public class AddFavoriteModelResponseT  implements java.io.Serializable {
         typeDesc.addFieldDesc(attrField);
         attrField = new org.apache.axis.description.AttributeDesc();
         attrField.setFieldName("result");
-        attrField.setXmlName(new javax.xml.namespace.QName("", "Result"));
+        attrField.setXmlName(new javax.xml.namespace.QName("", "ResultVO"));
         attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         typeDesc.addFieldDesc(attrField);
         attrField = new org.apache.axis.description.AttributeDesc();

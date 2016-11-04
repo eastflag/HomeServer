@@ -109,7 +109,7 @@ public class DeleteFavoriteStoreGroupResponseT  implements java.io.Serializable 
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://schema.auction.co.kr/Arche.Sell3.Service.xsd", "DeleteFavoriteStoreGroupResponseT"));
         org.apache.axis.description.AttributeDesc attrField = new org.apache.axis.description.AttributeDesc();
         attrField.setFieldName("result");
-        attrField.setXmlName(new javax.xml.namespace.QName("", "Result"));
+        attrField.setXmlName(new javax.xml.namespace.QName("", "ResultVO"));
         attrField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         typeDesc.addFieldDesc(attrField);
         attrField = new org.apache.axis.description.AttributeDesc();
