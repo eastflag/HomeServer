@@ -22,11 +22,6 @@ public class ApiController {
     @Autowired
     private BoardMapper boardMapper;
 
-    @RequestMapping("/hello")
-    public String Hello() {
-        return "Hello test";
-    }
-
     //게시판 생성 API
     @RequestMapping(method = RequestMethod.POST, value = "/api/board")
     public ResultVO addBoard(@RequestBody BoardVO board) {
