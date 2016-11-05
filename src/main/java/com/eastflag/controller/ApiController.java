@@ -4,7 +4,7 @@ import com.eastflag.Constant;
 import com.eastflag.domain.AttachVO;
 import com.eastflag.domain.BoardVO;
 import com.eastflag.domain.ResultVO;
-import com.eastflag.persistence.BoardMapper;
+import com.eastflag.persistence.ApiMapper;
 import com.eastflag.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ import java.util.List;
 @RestController
 public class ApiController {
     @Autowired
-    private BoardMapper boardMapper;
+    private ApiMapper boardMapper;
 
     //게시판 생성 API
     @RequestMapping(method = RequestMethod.POST, value = "/api/board")
@@ -39,7 +39,7 @@ public class ApiController {
         /*BoardVO board = new BoardVO();
         board.setTitle("제목");
         board.setContent("내용입니다.");*/
-        BoardVO board = boardMapper.findById(board_id);
+        BoardVO board = boardMapper.getBoard(board_id);
 
         return board;
     }
