@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.3.3.RELEASE'
+		springBootVersion = '1.4.1.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -33,6 +33,8 @@ dependencies {
 	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1")
 	compile group: 'io.netty', name: 'netty-all', version: '4.0.34.Final'
 	compile("com.google.code.gson:gson:2.4")
+
+	compile group: 'org.lazyluke', name: 'log4jdbc-remix', version:'0.2.7'
 
 	// https://mvnrepository.com/artifact/axis/axis
 	compile group: 'axis', name: 'axis', version: '1.4'
