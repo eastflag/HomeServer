@@ -1,6 +1,5 @@
 package com.eastflag.persistence;
 
-import com.eastflag.domain.AttachVO;
 import com.eastflag.domain.BoardVO;
 import org.apache.ibatis.annotations.*;
 

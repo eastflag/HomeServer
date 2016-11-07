@@ -1,17 +1,11 @@
 package com.eastflag.controller;
 
-import com.eastflag.Constant;
-import com.eastflag.domain.AttachVO;
 import com.eastflag.domain.BoardVO;
 import com.eastflag.domain.ResultVO;
 import com.eastflag.persistence.ApiMapper;
-import com.eastflag.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 /**
