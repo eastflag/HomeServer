@@ -7,19 +7,20 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+//SpringBootTest는 spring boot 1.4에 새로 등장.  https://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = TestProjectApplication.class)
-public class TestProjectApplicationTests {
+@SpringBootTest
+public class MapperTest {
 
 	@Autowired
 	private ApiMapper apiMapper;
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void addBoard() {
 		int maxId = apiMapper.getMaxBoardId() + 1;
@@ -45,7 +46,7 @@ public class TestProjectApplicationTests {
 		Assert.assertNotNull(board);
 	}
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void getBoardList() {
 		List<BoardVO> boardList = apiMapper.getBoardList();
@@ -53,7 +54,7 @@ public class TestProjectApplicationTests {
 		Assert.assertNotNull(boardList);
 	}
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void modifyBoard() {
 		int board_id = apiMapper.getMaxBoardId();
@@ -66,7 +67,7 @@ public class TestProjectApplicationTests {
 		Assert.assertTrue(result>0);
 	}
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void removeBoard() {
 		int board_id = apiMapper.getMaxBoardId();
