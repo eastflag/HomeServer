@@ -29,6 +29,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/board', {
+        templateUrl: 'views/board.html',
+        controller: 'BoardCtrl',
+        controllerAs: 'board'
+      })
       .otherwise({
         redirectTo: '/'
       });
