@@ -14,6 +14,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body ng-app="myApp" ng-controller="NavigationCtrl as navi">
     <!--[if lte IE 8]>
@@ -39,10 +40,10 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li ng-class="{active: navi.isActive('/')}"><a href="#/">Home</a></li>
-              <li ng-class="{active: navi.isActive('/about')}"><a ng-href="#/about">About</a></li>
-              <li ng-class="{active: navi.isActive('/contact')}"><a ng-href="#/">Contact</a></li>
-              <li ng-class="{active: navi.isActive('/board')}"><a ng-href="#/board">게시판</a></li>
+              <li ng-class="{active: isActive('/')}"><a href="#/">Home</a></li>
+              <li ng-class="{active: isActive('/about')}"><a ng-href="#/about">About</a></li>
+              <li ng-class="{active: isActive('/contact')}"><a ng-href="#/">Contact</a></li>
+              <li ng-class="{active: isActive('/board')}"><a ng-href="#/board">게시판</a></li>
             </ul>
           </div>
         </div>
