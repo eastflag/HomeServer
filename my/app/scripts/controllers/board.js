@@ -100,9 +100,21 @@ angular.module('myApp')
       $scope.modifyingBoard = false;
     };
 
+    //삭제버튼을 누르면 confirm 다이얼로그를 보여주고 확인을 누르면 삭제
     $scope.showRemove = function() {
       if($window.confirm('삭제하시겠습니까?')) {
         console.log('ok');
+        var params = {
+          board_id: $scope.selectedBoard.board_id
+        };
+        $http({
+          url: 'http://localhost:8080/api/removeBoard', method: 'DELETE', headers: {'Content-Type': 'application/json'}, data: params
+        }).success(function (value) {
+          if(value.result == 0) {
+            //게시판 글 다시 가져오기
+            $scope.getBoardList();
+          }
+        });
       }
     };
   });
