@@ -3,13 +3,13 @@
  */
 angular.module('myApp')
   .controller('BoardCtrl', function ($scope, $http) {
-    $scope.member_id = 1;
+    $scope.member_id = 1;  //인증로직이 완성될때까지 1번으로 하드코딩하여 테스트
 
-    $scope.boardList = [];
-    $scope.selectedBoard = null; //사용자가 글상세보기를 클릭할때 해당 글 데이터
+    $scope.boardList = [];  //글 목록 데이터를 담는 변수
+    $scope.selectedBoard = null; //사용자가 글상세보기를 클릭할때 선택된 글 데이터
 
-    $scope.replyingBoard = false;
-    $scope.modifyingBoard = false;
+    $scope.replyingBoard = false;  //답글쓰기 버튼 눌렀을때 답글작성 UI를 보여주는 변수
+    $scope.modifyingBoard = false; //수정 버튼을 눌렀을때 수정 UI를 보여주는 변수
 
     $scope.getBoardList = function () {
       $http.get('http://localhost:8080/api/getBoardList')
@@ -46,7 +46,7 @@ angular.module('myApp')
           $scope.getBoardList();
         }
       });
-    }
+    };
 
     $scope.replyBoard = function() {
       var params = {
@@ -69,11 +69,13 @@ angular.module('myApp')
       });
     };
 
+    //글 수정 버튼을 눌렀을때
     $scope.showModify = function() {
       $scope.modifyingBoard = true;
-      $scope.modifyContent = $scope.selectedBoard.content;
+      $scope.modifyContent = $scope.selectedBoard.content; //수정취소때 원래 글 복원하기 위해 변수 별도 설정
     };
 
+    //글 수정 완료 버튼을 눌렀을때
     $scope.modifyBoard = function() {
       var params = {
         content: $scope.modifyContent,
@@ -93,6 +95,7 @@ angular.module('myApp')
       });
     };
 
+    //글 수정 취소 버튼을 눌렀을때
     $scope.cancelModify = function () {
       $scope.modifyingBoard = false;
     };
