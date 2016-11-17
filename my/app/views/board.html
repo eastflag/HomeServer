@@ -18,6 +18,7 @@
         <hr>
         <button class="btn btn-default" ng-show="selectedBoard.level == 0" ng-click="replyingBoard = !replyingBoard">답글쓰기</button>
         <button class="btn btn-default" ng-show="selectedBoard.member_id == member_id" ng-click="showModify()">글 수정</button>
+        <button class="btn btn-default" ng-show="selectedBoard.member_id == member_id" ng-click="showRemove()">글 삭제</button>
       </div>
       <div ng-show="replyingBoard">
         <form class="form-horizontal" ng-submit="replyBoard()">

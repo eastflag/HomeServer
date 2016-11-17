@@ -2,7 +2,7 @@
  * Created by eastflag on 2016-11-14.
  */
 angular.module('myApp')
-  .controller('BoardCtrl', function ($scope, $http) {
+  .controller('BoardCtrl', function ($scope, $http, $window) {
     $scope.member_id = 1;  //인증로직이 완성될때까지 1번으로 하드코딩하여 테스트
 
     $scope.boardList = [];  //글 목록 데이터를 담는 변수
@@ -98,5 +98,11 @@ angular.module('myApp')
     //글 수정 취소 버튼을 눌렀을때
     $scope.cancelModify = function () {
       $scope.modifyingBoard = false;
+    };
+
+    $scope.showRemove = function() {
+      if($window.confirm('삭제하시겠습니까?')) {
+        console.log('ok');
+      }
     };
   });
