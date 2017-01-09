@@ -14,4 +14,8 @@ angular.module('myApp')
       'AngularJS',
       'Karma'
     ];
+
+    $scope.addTodo = function() {
+      $scope.awesomeThings.push($scope.todo);
+    }
   });

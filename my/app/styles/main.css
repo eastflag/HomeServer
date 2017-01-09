@@ -9,6 +9,17 @@ body {
   padding: 0;
 }
 
+/*.navbar-default .navbar-nav > .active{
+  color: #000;
+  background: #d65c14;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #000;
+  background: #d65c14;
+}*/
+
 tr.selected {
   background-color: #7bc00c !important;
 }

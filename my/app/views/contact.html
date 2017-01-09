@@ -1,0 +1,14 @@
+<p>This is the jQuery Todo Test page.</p>
+<div>
+  <ul id="todolist">
+    <li>HTML5 Boilerplate</li>
+    <li>AngularJS</li>
+    <li>Kamar</li>
+  </ul>
+</div>
+<input type="text" id="todo"><button onclick="addTodo()">입력</button>
+<script>
+  function addTodo() {
+    $('#todolist').append('<li>' + $('#todo').val() + '</li>');
+  }
+</script>
