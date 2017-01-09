@@ -56,7 +56,8 @@ public class DatabaseConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource());
-        sessionFactoryBean.setTypeAliasesPackage("com.eastflag.domain");
+        //sessionFactoryBean.setTypeAliasesPackage("com.eastflag.domain");
+        sessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:mybatis/mybatis-config.xml"));
         return sessionFactoryBean.getObject();
     }
 

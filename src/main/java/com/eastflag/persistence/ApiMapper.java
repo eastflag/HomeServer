@@ -22,7 +22,8 @@ public interface ApiMapper {
             "where board.board_id = #{board_id}")
     BoardVO getBoard(int board_id);
 
-    @Select("select board.*, member.name from board inner join member " +
+    @ResultMap("resultBoard")
+    @Select("select board.*, member.name, member.id from board inner join member " +
             "on board.member_id=member.member_id " +
             "order by parent_id desc, board_id asc")
     List<BoardVO> getBoardList();
