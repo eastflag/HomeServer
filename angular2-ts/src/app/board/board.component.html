@@ -1,0 +1,26 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        게시판
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let board of boards">
+                <td>{{board.board_id}}</td>
+                <td>{{board.title}}</td>
+                <td>{{board.member.name}}</td>
+                <td>{{board.created}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

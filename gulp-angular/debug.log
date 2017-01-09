@@ -1,0 +1,10 @@
+[0901/201412:ERROR:scoped_process_suspend.cc(29)] NtSuspendProcess, ntstatus=1
+[0901/201412:ERROR:process_info.cc(608)] range at 0x183b3d4800000000, size 0x23b fully unreadable
+[0901/201412:ERROR:process_info.cc(608)] range at 0x183b3da800000000, size 0x23b fully unreadable
+[0901/201412:ERROR:process_info.cc(608)] range at 0x0, size 0x23b fully unreadable
+[0901/201412:WARNING:in_range_cast.h(38)] value 2452833039798 out of range
+[0901/201412:WARNING:in_range_cast.h(38)] value 2452833039508 out of range
+[0901/201412:WARNING:in_range_cast.h(38)] value 2452833036040 out of range
+[0901/201412:WARNING:in_range_cast.h(38)] value 2452833036420 out of range
+[0901/201412:WARNING:in_range_cast.h(38)] value 2452832984160 out of range
+[0901/201412:WARNING:in_range_cast.h(38)] value 2452833382656 out of range
