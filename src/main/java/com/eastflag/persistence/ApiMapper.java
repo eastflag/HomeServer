@@ -10,7 +10,7 @@ public interface ApiMapper {
 
     @Insert({"<script>",
             "INSERT INTO board(board_id, member_id, title, content, parent_id, level, created)",
-            "VALUES(#{board_id}, #{member_id}, #{title}, #{content}, #{parent_id}, #{level}, now())",
+            "VALUES(#{board_id}, #{member.member_id}, #{title}, #{content}, #{parent_id}, #{level}, now())",
             "</script>"})
     int addBoard(BoardVO board);
 

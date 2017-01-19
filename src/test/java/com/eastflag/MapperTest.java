@@ -1,6 +1,7 @@
 package com.eastflag;
 
 import com.eastflag.domain.BoardVO;
+import com.eastflag.domain.MemberVO;
 import com.eastflag.persistence.ApiMapper;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -28,7 +29,9 @@ public class MapperTest {
 		BoardVO board = new BoardVO();
 		board.setTitle("test");
 		board.setContent("test content");
-		board.setMember_id(1);
+		MemberVO member = new MemberVO();
+		member.setMember_id(1);
+		board.setMember(member);
 		board.setBoard_id(maxId);
 		board.setParent_id(maxId);
 		board.setLevel(0);
