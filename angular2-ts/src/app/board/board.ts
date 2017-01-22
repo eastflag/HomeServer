@@ -7,6 +7,8 @@ export class Board {
     board_id: number;
     title: string;
     content: string;
+    level: number;
+    parent_id: number;
     created: string;
     member: Member;
 }

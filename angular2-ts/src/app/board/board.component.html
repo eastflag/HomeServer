@@ -3,6 +3,7 @@
         게시판
     </div>
     <div class="panel-body">
+        <board-detail *ngIf="selectedBoard" [board]="selectedBoard"></board-detail>
         <table class="table">
             <thead>
             <tr>
@@ -13,9 +14,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let board of boards">
+            <tr *ngFor="let board of boards" (click)="getBoard(board)" [class.selected]="board.board_id===selectedBoard?.board_id" style="cursor: pointer;">
                 <td>{{board.board_id}}</td>
-                <td>{{board.title}}</td>
+                <td><i style="margin-left: 15px;" class="material-icons" *ngIf="board.level > 0">subdirectory_arrow_right</i>{{board.title}}</td>
                 <td>{{board.member.name}}</td>
                 <td>{{board.created}}</td>
             </tr>
@@ -23,4 +24,5 @@
         </table>
     </div>
 </div>
+<board-write [level] = "0" [parent_id]="0" (refresh)="getBoardList()"></board-write>
 

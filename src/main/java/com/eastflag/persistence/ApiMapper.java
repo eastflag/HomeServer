@@ -17,6 +17,7 @@ public interface ApiMapper {
     @Select("SELECT IFNULL(max(board_id), 0)  FROM board")
     int getMaxBoardId();
 
+    @ResultMap("resultBoard")
     @Select("select board.*, member.name from board inner join member " +
             "on board.member_id=member.member_id " +
             "where board.board_id = #{board_id}")

@@ -9,13 +9,15 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {BoardComponent} from "./board/board.component";
 import {BoardService} from "./board/board.service";
+import {BoardDetailComponent} from "./board/board-detail.component";
+import {BoardWriteComponent} from "./board/board-write.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         AboutComponent,
-        BoardComponent
+        BoardComponent, BoardDetailComponent, BoardWriteComponent
     ],
     imports: [
         BrowserModule,
