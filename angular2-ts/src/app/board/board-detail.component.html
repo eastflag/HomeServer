@@ -1,0 +1,11 @@
+<div style="border: 1px solid #999999; padding: 15px;margin-bottom: 30px;">
+    <dl>
+        <dt>작성자: {{board.member.name}}</dt>
+        <dt>내용:</dt>
+        <dd>{{board.content}}</dd>
+    </dl>
+    <div>
+        <hr>
+        <button class="btn btn-default" *ngIf="board.level === 0" (click)="isShown" )>답글쓰기</button>
+    </div>
+</div>
